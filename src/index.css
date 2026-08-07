@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@theme {
+  /* KLARIXA Dark Theme Tokens */
+  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+
+  /* Surfaces */
+  --color-kl-dark: #0A0A0F;
+  --color-kl-panel: #14141A;
+  --color-kl-border: #1E1E2A;
+
+  /* Text */
+  --color-kl-text: #E0E0E0;
+  --color-kl-muted: #8888AA;
+  --color-kl-dim: #555577;
+
+  /* Accents */
+  --color-kl-green: #00FF88;
+  --color-kl-blue: #0088FF;
+
+  /* Semantic */
+  --color-kl-success: #00FF88;
+  --color-kl-danger: #FF3355;
+  --color-kl-warning: #FFAA33;
+}
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0A0A0F;
+  color: #E0E0E0;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0A0F;
+}
+::-webkit-scrollbar-thumb {
+  background: #1E1E2A;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555577;
+}
+
+/* KLARIXA brand glow pulse */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 8px #00FF88, 0 0 16px #00FF8844;
+  }
+  50% {
+    opacity: 0.7;
+    box-shadow: 0 0 12px #00FF88, 0 0 24px #00FF8866;
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Safe area for mobile bottom nav */
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Input autofill override */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 30px #14141A inset !important;
+  -webkit-text-fill-color: #E0E0E0 !important;
+  caret-color: #E0E0E0;
+}
